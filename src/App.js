@@ -7,12 +7,13 @@ import React, { Component } from 'react';
 // import SongPanel from '../containers/songPanel';
 // import MaxSongPanel from '../containers/maxSongPanel';
 //
+import { Router, Route, Link } from 'react-router'
 
 import ITEMS from '../container/item';
 
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger'
-import {createStore, applyMiddleware} from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from '../reducer/rootReducer';
 import thunk from 'redux-thunk';
 //
@@ -34,13 +35,17 @@ const configureStore = (initialState) => {
 const store = configureStore();
 window._store = store;
 
-export default class App extends Component {
-  render() {
 
-    return  (
-        <Provider store = {store}>
-            <ITEMS/>
-        </Provider>
-       );
-  }
+export default class App extends Component {
+    render() {
+
+        return (
+            <Provider store={store}>
+
+                <ITEMS />
+
+
+            </Provider>
+        );
+    }
 }
